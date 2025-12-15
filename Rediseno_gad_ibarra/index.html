@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="description" content="Portal oficial del Gobierno Autónomo Descentralizado Municipal de Ibarra - Sitio web completamente responsivo">
+    <meta name="keywords" content="Ibarra, municipio, servicios, trámites, Ecuador, gobierno">
+    <meta name="author" content="GAD Municipal de Ibarra">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="GAD Ibarra - Portal Oficial Responsivo">
+    <meta property="og:description" content="Accede a servicios municipales desde cualquier dispositivo">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <title>GAD Municipal de Ibarra | Portal Oficial</title>
+    
+    <!-- Hojas de estilo -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="apple-touch-icon" href="assets/icon-192.png">
+    
+    <!-- Manifest PWA -->
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- Precarga de recursos críticos -->
+    <link rel="preload" href="style.css" as="style">
+    <link rel="preload" href="script.js" as="script">
+</head>
+<body>
+    <!-- Skip Navigation para accesibilidad -->
+    <a href="#main-content" class="skip-to-content">Saltar al contenido principal</a>
+    
+    <!-- 🌟 HEADER PRINCIPAL -->
+    <header class="main-header" role="banner">
+        <div class="container header-container">
+            <!-- Logo -->
+            <div class="logo-container">
+                <a href="index.html" class="logo-link" aria-label="Ir al inicio">
+                    <img src="assets/images/logo-ibarra.svg" alt="Logo GAD Municipal de Ibarra" class="logo-img" width="150" height="50">
+                    <div class="logo-text">
+                        <h1 class="logo-title">GAD Municipal de Ibarra</h1>
+                        <p class="logo-subtitle">Ciudad Blanca</p>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Controles de utilidad -->
+            <div class="utility-controls">
+                <button id="themeToggle" class="utility-btn" aria-label="Cambiar tema claro/oscuro" title="Cambiar tema">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button id="fontSizeToggle" class="utility-btn" aria-label="Ajustar tamaño de texto" title="Tamaño de texto">
+                    <i class="fas fa-text-height"></i>
+                </button>
+                <button id="searchToggle" class="utility-btn" aria-label="Buscar en el sitio" title="Buscar">
+                    <i class="fas fa-search"></i>
+                </button>
+                <button class="menu-toggle" id="mainMenuToggle" aria-label="Abrir menú principal" aria-expanded="false">
+                    <span class="menu-icon"></span>
+                    <span class="menu-icon"></span>
+                    <span class="menu-icon"></span>
+                </button>
+            </div>
+
+            <!-- Barra de búsqueda -->
+            <div class="search-container" id="searchContainer">
+                <form class="search-form" role="search">
+                    <input type="search" 
+                           class="search-input" 
+                           placeholder="Buscar servicios, noticias, trámites..."
+                           aria-label="Buscar en el sitio">
+                    <button type="submit" class="search-btn" aria-label="Realizar búsqueda">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <button type="button" class="search-close" id="searchClose" aria-label="Cerrar búsqueda">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </form>
+            </div>
+
+            <!-- 🔍 MENÚ DE NAVEGACIÓN PRINCIPAL -->
+            <nav class="main-nav" id="mainNav" role="navigation" aria-label="Navegación principal">
+                <ul class="nav-list">
+                    <li class="nav-item active">
+                        <a href="index.html" class="nav-link">
+                            <i class="fas fa-home"></i>
+                            <span>Inicio</span>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">
+                            <i class="fas fa-city"></i>
+                            <span>El Cantón</span>
+                            <i class="fas fa-chevron-down dropdown-icon"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#"><i class="fas fa-map-marked-alt"></i> Historia y Cultura</a></li>
+                            <li><a href="#"><i class="fas fa-landmark"></i> Gobierno Municipal</a></li>
+                            <li><a href="#"><i class="fas fa-chart-line"></i> Indicadores</a></li>
+                            <li><a href="#"><i class="fas fa-map"></i> Planos y Mapas</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">
+                            <i class="fas fa-handshake"></i>
+                            <span>Servicios</span>
+                            <i class="fas fa-chevron-down dropdown-icon"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#"><i class="fas fa-file-invoice-dollar"></i> Pago en Línea</a></li>
+                            <li><a href="#"><i class="fas fa-search-dollar"></i> Consulta de Deudas</a></li>
+                            <li><a href="#"><i class="fas fa-clipboard-list"></i> Trámites Digitales</a></li>
+                            <li><a href="#"><i class="fas fa-hard-hat"></i> Permisos y Licencias</a></li>
+                            <li><a href="#"><i class="fas fa-water"></i> Servicios Públicos</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-newspaper"></i>
+                            <span>Noticias</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Eventos</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-phone-alt"></i>
+                            <span>Contacto</span>
+                        </a>
+                    </li>
+                    <li class="nav-item cta-item">
+                        <a href="#" class="nav-link cta-link">
+                            <i class="fas fa-user-circle"></i>
+                            <span>Acceso Ciudadano</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 🎯 BREADCRUMB (Miga de pan) -->
+    <nav class="breadcrumb" aria-label="Miga de pan">
+        <div class="container">
+            <ol class="breadcrumb-list">
+                <li class="breadcrumb-item">
+                    <a href="index.html"><i class="fas fa-home"></i> Inicio</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">Portal Principal</li>
+            </ol>
+        </div>
+    </nav>
+
+    <!-- 🎪 CONTENIDO PRINCIPAL -->
+    <main id="main-content" class="main-content" role="main">
+        <!-- 🌟 HERO SECTION - Carrusel de imágenes -->
+        <section class="hero-section" aria-label="Presentación principal">
+            <div class="hero-slider" id="heroSlider">
+                <!-- Slide 1 -->
+                <div class="hero-slide active">
+                    <div class="slide-image">
+                        <img src="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" 
+                             alt="Vista panorámica de Ibarra" 
+                             loading="lazy">
+                    </div>
+                    <div class="container">
+                        <div class="slide-content">
+                            <h2 class="slide-title">Bienvenidos a Ibarra</h2>
+                            <p class="slide-description">La Ciudad Blanca, donde la tradición se encuentra con el progreso</p>
+                            <div class="slide-actions">
+                                <a href="#services" class="btn btn-primary btn-lg">
+                                    <i class="fas fa-arrow-right"></i> Conocer Servicios
+                                </a>
+                                <a href="#news" class="btn btn-outline-light btn-lg">
+                                    <i class="fas fa-newspaper"></i> Ver Noticias
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Slide 2 -->
+                <div class="hero-slide">
+                    <div class="slide-image">
+                        <img src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" 
+                             alt="Servicios municipales digitales" 
+                             loading="lazy">
+                    </div>
+                    <div class="container">
+                        <div class="slide-content">
+                            <h2 class="slide-title">Servicios 100% Digitales</h2>
+                            <p class="slide-description">Realiza tus trámites desde cualquier dispositivo, sin filas ni esperas</p>
+                            <a href="#digital-services" class="btn btn-primary btn-lg">
+                                <i class="fas fa-laptop"></i> Acceder a Trámites
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Controles del slider -->
+                <button class="slider-prev" id="sliderPrev" aria-label="Imagen anterior">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="slider-next" id="sliderNext" aria-label="Siguiente imagen">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                
+                <!-- Indicadores -->
+                <div class="slider-indicators">
+                    <button class="indicator active" data-slide="0" aria-label="Ir a imagen 1"></button>
+                    <button class="indicator" data-slide="1" aria-label="Ir a imagen 2"></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 📱 SERVICIOS DESTACADOS -->
+        <section id="services" class="services-section" aria-labelledby="services-title">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="services-title" class="section-title">
+                        <i class="fas fa-star"></i> Servicios Destacados
+                    </h2>
+                    <p class="section-subtitle">Accede a los servicios más solicitados de manera rápida y sencilla</p>
+                </div>
+
+                <div class="services-grid">
+                    <!-- Servicio 1 -->
+                    <article class="service-card featured">
+                        <div class="service-icon">
+                            <i class="fas fa-file-invoice-dollar"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3 class="service-title">Pago de Impuestos en Línea</h3>
+                            <p class="service-description">Paga tus impuestos prediales, alcabalas y tasas municipales de forma segura desde cualquier dispositivo.</p>
+                            <div class="service-meta">
+                                <span class="meta-item"><i class="fas fa-clock"></i> 24/7 Disponible</span>
+                                <span class="meta-item"><i class="fas fa-mobile-alt"></i> App Móvil</span>
+                            </div>
+                            <div class="service-actions">
+                                <a href="#" class="btn btn-primary">
+                                    <i class="fas fa-external-link-alt"></i> Pagar Ahora
+                                </a>
+                                <a href="#" class="btn-link">
+                                    <i class="fas fa-info-circle"></i> Más Información
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Servicio 2 -->
+                    <article class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-clipboard-check"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3 class="service-title">Trámites Digitales</h3>
+                            <p class="service-description">Inicia y da seguimiento a tus trámites municipales sin salir de casa.</p>
+                            <div class="service-meta">
+                                <span class="meta-item"><i class="fas fa-check-circle"></i> En Línea</span>
+                                <span class="meta-item"><i class="fas fa-file-pdf"></i> Digital</span>
+                            </div>
+                            <a href="#" class="btn btn-outline">
+                                <i class="fas fa-play-circle"></i> Iniciar Trámite
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Servicio 3 -->
+                    <article class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-search-dollar"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3 class="service-title">Consulta de Deudas</h3>
+                            <p class="service-description">Verifica el estado de tus obligaciones municipales de manera instantánea.</p>
+                            <div class="service-meta">
+                                <span class="meta-item"><i class="fas fa-bolt"></i> Instantáneo</span>
+                                <span class="meta-item"><i class="fas fa-history"></i> Historial</span>
+                            </div>
+                            <a href="#" class="btn btn-outline">
+                                <i class="fas fa-search"></i> Consultar
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Servicio 4 -->
+                    <article class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-hard-hat"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3 class="service-title">Licencias de Construcción</h3>
+                            <p class="service-description">Solicita y sigue el estado de tus permisos de construcción en línea.</p>
+                            <div class="service-meta">
+                                <span class="meta-item"><i class="fas fa-calendar-check"></i> Seguimiento</span>
+                                <span class="meta-item"><i class="fas fa-tasks"></i> Proceso</span>
+                            </div>
+                            <a href="#" class="btn btn-outline">
+                                <i class="fas fa-file-signature"></i> Solicitar
+                            </a>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="section-footer">
+                    <a href="#" class="btn btn-secondary">
+                        <i class="fas fa-list"></i> Ver Todos los Servicios
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 📰 ÚLTIMAS NOTICIAS -->
+        <section id="news" class="news-section" aria-labelledby="news-title">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="news-title" class="section-title">
+                        <i class="fas fa-newspaper"></i> Últimas Noticias
+                    </h2>
+                    <div class="section-actions">
+                        <a href="#" class="btn btn-outline">
+                            <i class="fas fa-rss"></i> Suscribirse
+                        </a>
+                    </div>
+                </div>
+
+                <div class="news-grid">
+                    <!-- Noticia 1 -->
+                    <article class="news-card">
+                        <div class="news-image">
+                            <img src="https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                                 alt="Reunión de trabajo municipal" 
+                                 loading="lazy">
+                            <span class="news-category">Gobierno</span>
+                        </div>
+                        <div class="news-content">
+                            <div class="news-meta">
+                                <span class="meta-item">
+                                    <i class="far fa-calendar"></i> 15 Dic 2025
+                                </span>
+                                <span class="meta-item">
+                                    <i class="far fa-clock"></i> 5 min lectura
+                                </span>
+                            </div>
+                            <h3 class="news-title">Nuevo Sistema de Gestión Municipal</h3>
+                            <p class="news-excerpt">Implementamos una plataforma integrada para mejorar la atención ciudadana y la transparencia en la gestión.</p>
+                            <div class="news-footer">
+                                <a href="#" class="news-link">
+                                    Leer más <i class="fas fa-arrow-right"></i>
+                                </a>
+                                <div class="news-stats">
+                                    <span><i class="far fa-eye"></i> 1.2K</span>
+                                    <span><i class="far fa-comment"></i> 45</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Noticia 2 -->
+                    <article class="news-card">
+                        <div class="news-image">
+                            <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                                 alt="Infraestructura vial" 
+                                 loading="lazy">
+                            <span class="news-category">Infraestructura</span>
+                        </div>
+                        <div class="news-content">
+                            <div class="news-meta">
+                                <span class="meta-item">
+                                    <i class="far fa-calendar"></i> 14 Dic 2025
+                                </span>
+                                <span class="meta-item">
+                                    <i class="far fa-clock"></i> 3 min lectura
+                                </span>
+                            </div>
+                            <h3 class="news-title">Mejoras en la Vialidad Urbana</h3>
+                            <p class="news-excerpt">Iniciamos trabajos de mantenimiento en las principales arterias viales del centro histórico.</p>
+                            <div class="news-footer">
+                                <a href="#" class="news-link">
+                                    Leer más <i class="fas fa-arrow-right"></i>
+                                </a>
+                                <div class="news-stats">
+                                    <span><i class="far fa-eye"></i> 890</span>
+                                    <span><i class="far fa-comment"></i> 32</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Noticia 3 -->
+                    <article class="news-card">
+                        <div class="news-image">
+                            <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                                 alt="Evento cultural" 
+                                 loading="lazy">
+                            <span class="news-category">Cultura</span>
+                        </div>
+                        <div class="news-content">
+                            <div class="news-meta">
+                                <span class="meta-item">
+                                    <i class="far fa-calendar"></i> 13 Dic 2025
+                                </span>
+                                <span class="meta-item">
+                                    <i class="far fa-clock"></i> 4 min lectura
+                                </span>
+                            </div>
+                            <h3 class="news-title">Festival Cultural 2025</h3>
+                            <p class="news-excerpt">Conoce la programación completa del festival cultural que se realizará este mes en la ciudad.</p>
+                            <div class="news-footer">
+                                <a href="#" class="news-link">
+                                    Leer más <i class="fas fa-arrow-right"></i>
+                                </a>
+                                <div class="news-stats">
+                                    <span><i class="far fa-eye"></i> 1.5K</span>
+                                    <span><i class="far fa-comment"></i> 78</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 📅 EVENTOS PRÓXIMOS -->
+        <section class="events-section" aria-labelledby="events-title">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="events-title" class="section-title">
+                        <i class="fas fa-calendar-alt"></i> Próximos Eventos
+                    </h2>
+                </div>
+
+                <div class="events-timeline">
+                    <!-- Evento 1 -->
+                    <article class="event-card">
+                        <div class="event-date">
+                            <span class="event-day">18</span>
+                            <span class="event-month">DIC</span>
+                        </div>
+                        <div class="event-content">
+                            <h3 class="event-title">Sesión del Concejo Municipal</h3>
+                            <div class="event-meta">
+                                <span><i class="fas fa-clock"></i> 10:00 AM - 1:00 PM</span>
+                                <span><i class="fas fa-map-marker-alt"></i> Salón de Sesiones</span>
+                            </div>
+                            <p class="event-description">Sesión ordinaria del Concejo Municipal abierta al público.</p>
+                            <a href="#" class="event-link">
+                                <i class="fas fa-external-link-alt"></i> Ver Agenda
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Evento 2 -->
+                    <article class="event-card">
+                        <div class="event-date">
+                            <span class="event-day">20</span>
+                            <span class="event-month">DIC</span>
+                        </div>
+                        <div class="event-content">
+                            <h3 class="event-title">Feria de Emprendimiento</h3>
+                            <div class="event-meta">
+                                <span><i class="fas fa-clock"></i> 9:00 AM - 6:00 PM</span>
+                                <span><i class="fas fa-map-marker-alt"></i> Parque Ciudadela</span>
+                            </div>
+                            <p class="event-description">Exposición de productos y servicios de emprendedores locales.</p>
+                            <a href="#" class="event-link">
+                                <i class="fas fa-external-link-alt"></i> Más Información
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Evento 3 -->
+                    <article class="event-card">
+                        <div class="event-date">
+                            <span class="event-day">22</span>
+                            <span class="event-month">DIC</span>
+                        </div>
+                        <div class="event-content">
+                            <h3 class="event-title">Taller de Reciclaje</h3>
+                            <div class="event-meta">
+                                <span><i class="fas fa-clock"></i> 3:00 PM - 5:00 PM</span>
+                                <span><i class="fas fa-map-marker-alt"></i> Centro Cultural</span>
+                            </div>
+                            <p class="event-description">Taller gratuito sobre técnicas de reciclaje y cuidado ambiental.</p>
+                            <a href="#" class="event-link">
+                                <i class="fas fa-external-link-alt"></i> Inscribirse
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 📊 ESTADÍSTICAS EN TIEMPO REAL -->
+        <section class="stats-section" aria-label="Estadísticas municipales">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-content">
+                            <span class="stat-number" data-count="245000">0</span>
+                            <span class="stat-label">Habitantes</span>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <div class="stat-content">
+                            <span class="stat-number" data-count="12500">0</span>
+                            <span class="stat-label">Trámites Mensuales</span>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <div class="stat-content">
+                            <span class="stat-number" data-count="85">0</span>
+                            <span class="stat-label">% Digitalización</span>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="stat-content">
+                            <span class="stat-number" data-count="24">0</span>
+                            <span class="stat-label">Horas Servicio</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 📞 CONTACTO RÁPIDO -->
+        <section class="contact-section" aria-labelledby="contact-title">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h2 id="contact-title" class="section-title">
+                            <i class="fas fa-headset"></i> ¿Necesitas Ayuda?
+                        </h2>
+                        <p class="contact-description">Estamos aquí para asistirte. Contáctanos a través de los siguientes canales:</p>
+                        
+                        <div class="contact-methods">
+                            <div class="contact-method">
+                                <div class="method-icon">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <div class="method-content">
+                                    <h4>Línea Telefónica</h4>
+                                    <a href="tel:+593623700200" class="method-link">(06) 237-0020</a>
+                                    <p class="method-schedule">Lunes a Viernes 8:00 - 17:00</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-method">
+                                <div class="method-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="method-content">
+                                    <h4>Correo Electrónico</h4>
+                                    <a href="mailto:info@ibarra.gob.ec" class="method-link">info@ibarra.gob.ec</a>
+                                    <p class="method-schedule">Respuesta en 24 horas</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-method">
+                                <div class="method-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="method-content">
+                                    <h4>Oficina Central</h4>
+                                    <p class="method-text">García Moreno 6-31 y Simón Bolívar, Ibarra</p>
+                                    <p class="method-schedule">Atención presencial con cita previa</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form-container">
+                        <h3 class="form-title">Envía un Mensaje</h3>
+                        <form id="contactForm" class="contact-form">
+                            <div class="form-group">
+                                <label for="contactName">Nombre completo *</label>
+                                <input type="text" id="contactName" name="name" required>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="contactEmail">Correo electrónico *</label>
+                                    <input type="email" id="contactEmail" name="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="contactPhone">Teléfono</label>
+                                    <input type="tel" id="contactPhone" name="phone">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="contactSubject">Asunto *</label>
+                                <select id="contactSubject" name="subject" required>
+                                    <option value="">Selecciona un asunto</option>
+                                    <option value="informacion">Información General</option>
+                                    <option value="tramite">Consulta sobre Trámite</option>
+                                    <option value="queja">Queja o Reclamo</option>
+                                    <option value="sugerencia">Sugerencia</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="contactMessage">Mensaje *</label>
+                                <textarea id="contactMessage" name="message" rows="4" required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary btn-block">
+                                <i class="fas fa-paper-plane"></i> Enviar Mensaje
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 👣 FOOTER COMPLETO -->
+    <footer class="main-footer" role="contentinfo">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <!-- Columna 1 -->
+                    <div class="footer-column">
+                        <h3 class="footer-title">
+                            <img src="assets/images/logo-ibarra.svg" alt="Logo GAD Ibarra" class="footer-logo">
+                        </h3>
+                        <p class="footer-description">
+                            Gobierno Autónomo Descentralizado Municipal del Cantón Ibarra.
+                            Trabajando por el desarrollo integral y sostenible de la Ciudad Blanca.
+                        </p>
+                        <div class="footer-social">
+                            <a href="#" class="social-link" aria-label="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="YouTube">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="WhatsApp">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Columna 2 - Enlaces rápidos -->
+                    <div class="footer-column">
+                        <h4 class="footer-title">Enlaces Rápidos</h4>
+                        <ul class="footer-links">
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> Transparencia</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> Rendición de Cuentas</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> Plan de Desarrollo</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> Ordenanzas Municipales</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> Compras Públicas</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Columna 3 - Servicios -->
+                    <div class="footer-column">
+                        <h4 class="footer-title">Servicios Populares</h4>
+                        <ul class="footer-links">
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> Pago de Impuestos</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> Trámites en Línea</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> Consulta de Deudas</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> Licencias de Construcción</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> Permisos Comerciales</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Columna 4 - Contacto -->
+                    <div class="footer-column">
+                        <h4 class="footer-title">Contacto de Emergencia</h4>
+                        <ul class="footer-contact">
+                            <li>
+                                <i class="fas fa-phone"></i>
+                                <div>
+                                    <strong>Emergencias</strong>
+                                    <a href="tel:911">911</a>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-ambulance"></i>
+                                <div>
+                                    <strong>Salud</strong>
+                                    <a href="tel:131">131</a>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-fire-extinguisher"></i>
+                                <div>
+                                    <strong>Bomberos</strong>
+                                    <a href="tel:102">102</a>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-shield-alt"></i>
+                                <div>
+                                    <strong>Policía</strong>
+                                    <a href="tel:101">101</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-content">
+                    <div class="copyright">
+                        <p>&copy; 2025 GAD Municipal de Ibarra. Todos los derechos reservados.</p>
+                        <p class="footer-note">
+                            <i class="fas fa-code"></i> 
+                            Sitio web rediseñado con estándares de accesibilidad y diseño responsivo.
+                        </p>
+                    </div>
+                    
+                    <div class="footer-legal">
+                        <a href="#">Política de Privacidad</a>
+                        <a href="#">Términos de Uso</a>
+                        <a href="#">Mapa del Sitio</a>
+                        <a href="#" id="accessibilityToggle">
+                            <i class="fas fa-universal-access"></i> Accesibilidad
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Sello de validación -->
+                <div class="validation-badges">
+                    <a href="https://validator.w3.org/" target="_blank" rel="noopener" class="validation-badge">
+                        <i class="fab fa-html5"></i> HTML5 Validado
+                    </a>
+                    <a href="https://jigsaw.w3.org/css-validator/" target="_blank" rel="noopener" class="validation-badge">
+                        <i class="fab fa-css3-alt"></i> CSS3 Validado
+                    </a>
+                    <span class="validation-badge">
+                        <i class="fas fa-mobile-alt"></i> 100% Responsivo
+                    </span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 🆘 MENÚ FLOTANTE DE ACCESIBILIDAD -->
+    <div class="accessibility-menu" id="accessibilityMenu">
+        <button class="accessibility-toggle" id="accessibilityToggleBtn" aria-label="Abrir menú de accesibilidad">
+            <i class="fas fa-universal-access"></i>
+        </button>
+        <div class="accessibility-options">
+            <h4>Opciones de Accesibilidad</h4>
+            <div class="option-group">
+                <button id="highContrastToggle" class="option-btn">
+                    <i class="fas fa-adjust"></i> Alto Contraste
+                </button>
+                <button id="textToSpeechToggle" class="option-btn">
+                    <i class="fas fa-volume-up"></i> Lectura en Voz Alta
+                </button>
+                <button id="simpleLayoutToggle" class="option-btn">
+                    <i class="fas fa-layer-group"></i> Diseño Simplificado
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ⬆️ BOTÓN FLOTANTE PARA IR ARRIBA -->
+    <button id="backToTop" class="back-to-top" aria-label="Volver al inicio">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- 💬 CHAT DE ASISTENCIA (Simulado) -->
+    <div class="chat-widget" id="chatWidget">
+        <button class="chat-toggle" id="chatToggle" aria-label="Abrir chat de asistencia">
+            <i class="fas fa-comments"></i>
+            <span class="chat-badge">3</span>
+        </button>
+        <div class="chat-container">
+            <div class="chat-header">
+                <h4>Asistencia Virtual</h4>
+                <button class="chat-close" id="chatClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+                <!-- Mensajes se cargan dinámicamente -->
+            </div>
+            <div class="chat-input">
+                <input type="text" placeholder="Escribe tu pregunta..." id="chatInput">
+                <button id="chatSend">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 📱 MENÚ INFERIOR PARA MÓVILES -->
+    <nav class="mobile-bottom-nav" aria-label="Navegación inferior móvil">
+        <a href="index.html" class="mobile-nav-item active">
+            <i class="fas fa-home"></i>
+            <span>Inicio</span>
+        </a>
+        <a href="#" class="mobile-nav-item">
+            <i class="fas fa-compass"></i>
+            <span>Servicios</span>
+        </a>
+        <a href="#" class="mobile-nav-item">
+            <i class="fas fa-search"></i>
+            <span>Buscar</span>
+        </a>
+        <a href="#" class="mobile-nav-item">
+            <i class="fas fa-user-circle"></i>
+            <span>Cuenta</span>
+        </a>
+        <button class="mobile-nav-item" id="mobileMenuToggle">
+            <i class="fas fa-bars"></i>
+            <span>Más</span>
+        </button>
+    </nav>
+
+    <!-- 📦 CONTENEDOR DE NOTIFICACIONES -->
+    <div id="notificationContainer" aria-live="polite"></div>
+
+    <!-- 🎬 MODAL DE SUSCRIPCIÓN (Opcional) -->
+    <div class="modal-overlay" id="newsletterModal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h3>¡Mantente Informado!</h3>
+                <button class="modal-close" id="modalClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-content">
+                <p>Suscríbete a nuestro boletín y recibe las últimas noticias y actualizaciones del municipio.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Tu correo electrónico" required>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-envelope"></i> Suscribirse
+                    </button>
+                </form>
+                <p class="modal-note">Puedes cancelar la suscripción en cualquier momento.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 📜 SCRIPTS -->
+    <script src="script.js"></script>
+    
+    <!-- Script de inicialización -->
+    <script>
+        // Inicialización cuando el DOM está listo
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🚀 Sitio GAD Ibarra cargado correctamente');
+            
+            // Verificar si es la primera visita
+            if (!localStorage.getItem('firstVisit')) {
+                localStorage.setItem('firstVisit', 'true');
+                // Mostrar modal de bienvenida después de 3 segundos
+                setTimeout(() => {
+                    const modal = document.getElementById('newsletterModal');
+                    if (modal) {
+                        modal.classList.add('active');
+                    }
+                }, 3000);
+            }
+            
+            // Inicializar el año actual en el footer
+            const yearSpan = document.querySelector('.copyright-year');
+            if (yearSpan) {
+                yearSpan.textContent = new Date().getFullYear();
+            }
+        });
+    </script>
+</body>
+</html>
